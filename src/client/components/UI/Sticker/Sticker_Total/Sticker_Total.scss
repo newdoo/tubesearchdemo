@@ -1,0 +1,40 @@
+@import 'utils';
+
+.Sticker_Total {
+    position: relative;   
+    width: 300px;
+    height: auto;
+    margin-top: 6px;    
+    
+    .Sticker_Total_title {
+      font-family: "Montserrat-Bold";
+      font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: #4a4a4a;
+    }
+
+    .Sticker_Total_left_title {
+      font-family: "Montserrat-Bold";
+      font-size: 13px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;      
+      letter-spacing: normal;
+      color: #4a4a4a;
+    }
+
+    .Sticker_Total_right {
+      font-family: "Montserrat-Medium";
+      font-size: 13px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;      
+      letter-spacing: normal;
+      text-align: right;
+      color: #4a4a4a;
+    }
+}

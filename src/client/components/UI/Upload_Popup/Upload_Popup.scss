@@ -1,0 +1,35 @@
+@import 'utils';
+
+.Upload_Popup {  
+  position: relative;  
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 35px;    
+  
+  .Upload_Popup_default {
+    width: 95%;
+    margin-left: 60px;
+  }
+  
+  .Upload_Popup_div {
+    
+    width: 100%;    
+    
+    border-radius: 10px 0px 10px 10px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+    
+    background-color: #ffffff;
+
+    display: flex;
+  }
+
+  .Upload_Popup_left_div {    
+    width: 51%;    
+  }
+
+  .Upload_Popup_right_div {
+    width: 49%;    
+  }
+   
+}
+

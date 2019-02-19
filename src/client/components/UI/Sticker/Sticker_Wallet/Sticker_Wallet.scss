@@ -1,0 +1,22 @@
+@import 'utils';
+
+.Sticker_Wallet {
+  position: relative;    
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 99%;
+
+  .Sticker_Wallet_div {
+    width: 100%;    
+    display: flex;
+  }
+
+  .Sticker_Wallet_left_div {    
+    width: 35%;    
+  }
+
+  .Sticker_Wallet_right_div {
+    width: 63%;    
+  }
+}
+

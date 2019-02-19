@@ -1,0 +1,74 @@
+@import 'utils';
+
+.Upload_Category {
+  position: relative;     
+  width: 100%;
+
+  .Upload_Category_div {
+    display: flex;    
+    flex-direction: row;    
+    align-items: flex-start;          
+  }
+
+  .Upload_Category_title {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0b0f18;    
+
+    width: 150px;            
+  }
+
+  .Upload_Category_left_div {
+    width: 150px;            
+  }
+
+  .Upload_Category_right_div {    
+  }
+
+  .Upload_Category_button_div {    
+    margin-left: -3px;
+  }
+
+  .Upload_Category_button {
+    font-family: "Montserrat-Medium";
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+
+    height: 30px;
+    width: auto;
+
+    border-color: #979797;    
+    border-radius: 19px;    
+    border: 1px solid;
+    text-transform: none; 
+
+    margin-right:8px; 
+    margin-bottom: 15px;
+
+  }
+
+  .Upload_Category_desc {
+    font-family: "Montserrat-Medium";
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #4a4a4a;
+
+    margin-bottom: 28px;
+  }
+}
+

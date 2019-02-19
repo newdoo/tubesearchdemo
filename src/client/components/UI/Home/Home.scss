@@ -1,0 +1,168 @@
+@import 'utils';
+
+.Home {
+  position: relative;
+  
+  .Center_bg_div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Center_left_div {
+    width: 830px;
+    height: 600px;
+  }
+
+  //stipop logo 위치
+  .Center_bg {                      
+    object-fit : contain;    
+    position: relative;
+    top: -155px;
+    left: 75px;
+    pointer-events: none;
+    height: 680px;
+  }
+
+  .Center_right_div {            
+    position: relative;
+    top: -10px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+    align-items: flex-start;            
+  }
+
+  .Center_right_title {
+    font-family: 'Montserrat', 'NanumSquareRound', sans-serif;
+    font-size: 39px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    color: #ff3b94;
+    margin-bottom: 30px;
+  }
+
+  .Center_right_desc {
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #7e7e7e;
+    width: 342px;
+    margin-bottom: 30px;
+  }
+
+  .Center_right_startButton {
+    width: 257px;
+    height: 68px;
+    
+    border: 2px solid;
+    border-radius: 8px;
+    text-transform: none;    
+    font-family: 'Montserrat', 'NanumSquareRound', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #ff3b94;
+
+    &:hover {
+      border: 2px solid #ff3b94;   
+    }
+
+  }
+
+  .Center_br {
+    height: 79px;
+  }
+
+  @include media('<develop') {
+
+    .Center_bg {
+      left: 25px;
+      // height: 90%;
+      // left: 0px;
+      // height: 425px;
+    }
+
+    .Center_bg_div {
+      // flex-direction: column;
+    }
+
+    .Center_left_div {
+      // display: flex;
+      // justify-content: center;
+      // width: auto;
+      // height: 330px;
+    }
+
+    .Center_right_title {
+      width: 100%;
+    }
+
+    .Center_right_div {
+      align-items: flex-start;
+      top: 0px;
+      left: 0px;
+      margin-bottom: 70px;
+      width: 40%;
+    }
+
+    .Center_right_desc {
+      width: 70%;
+    }
+
+    
+  }
+
+  @include media('<mobile') {
+
+    .Center_bg {
+      left: 0px;
+      height: 425px;
+    }
+
+    .Center_bg_div {
+      flex-direction: column;
+    }
+
+    .Center_left_div {
+      display: flex;
+      justify-content: center;
+      width: auto;
+      height: 330px;
+    }
+
+    .Center_right_div {
+      align-items: center;
+      top: 0px;
+      left: 0px;
+      margin-bottom: 70px;
+      width: auto;
+    }
+
+    .Center_right_title {
+      text-align: center;
+    }
+
+    .Center_right_desc {
+      width: 100%;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+  }
+
+  
+   
+}
+

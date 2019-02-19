@@ -1,0 +1,68 @@
+@import 'utils';
+
+.LoginMenu {
+        position: relative;   
+        
+        .LoginMenu__Div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                max-width:  730px;
+                height: 68px;
+                
+                background-color:#f5f5f5;                 
+                border-radius: 10px 10px 0px 0px;         
+        }
+
+
+
+        .LoginMenu_div {
+                height: 68px;
+                width:  730px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                background-color:#f5f5f5;                 
+                border-radius: 10px 10px 0px 0px;         
+                margin-top: 52px;
+        }
+
+        .Login_menu {
+                width:  365px;
+                height: 69px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;                
+        }
+
+        .Login_menu_select {                
+                border-radius: 10px 10px 0px 0px;
+                background-color: #ffffff;                
+                border-bottom-color : #ffffff;   
+        }
+
+        .Login_menu_select_right {                
+                border-radius: 10px 10px 0px 0px;
+                background-color: #ffffff;                
+                border-bottom-color : #ffffff;   
+                width:  361px;         
+        }
+
+        .Login_link {
+                font-family: 'Montserrat', 'NanumSquareRound', sans-serif;
+                font-size: 19px;
+                font-weight: 600;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.95;
+                letter-spacing: normal;
+                text-align: center;
+                color: #0b0f18;
+
+                &:hover {
+                        cursor: pointer;
+                      }   
+        }
+}
+

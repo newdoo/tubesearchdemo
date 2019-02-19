@@ -1,0 +1,26 @@
+@import 'utils';
+
+.Sticker_Line {
+  position: relative;   
+  height: 70px;
+  width: 100%;
+
+  display: flex;  
+  align-items: center;
+
+  border-bottom: 1px solid#bfbfbf;
+
+  .Sticker_Line_title {
+    font-family: "Montserrat-Medium";
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #4a4a4a;
+
+    margin-left:  15px;
+    }
+}
+

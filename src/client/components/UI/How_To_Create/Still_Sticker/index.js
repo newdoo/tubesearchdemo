@@ -1,0 +1,1 @@
+export { default } from './Still_Sticker';

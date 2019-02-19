@@ -1,0 +1,56 @@
+@import 'lib/all';
+
+$mobile-width: 640px;
+$tablet-width: 1024px;
+$desktop-width: 1400px;
+$develop-width: 1440px;
+
+
+$breakpoints: (mobile: $mobile-width, tablet: $tablet-width, desktop: $desktop-width , develop: $develop-width );
+
+@mixin public_hover_transparent() {  
+  &:hover, &:active {
+    background : transparent;
+  }
+}
+              
+@mixin public_responsivePadding {
+  display: block;
+  max-height: 5px;
+  color:transparent;
+}
+
+@mixin public_content_padding {  
+  height: 10px;
+  background-color: transparent;
+}
+
+
+@mixin public_flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin public_flex_row {
+  -webkit-box-orient: horizontal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin public_flex_column {
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin public_justify_content_center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+
+
+//@include public_hover_transparent();

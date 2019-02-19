@@ -1,0 +1,63 @@
+@import 'utils';
+
+.Upload_Price {
+  position: relative;     
+  width: 100%;  
+  
+  .Upload_Price_div {
+    display: flex;    
+    flex-direction: row;    
+    align-items: flex-start;              
+  }
+
+  .Upload_Price_left_div {
+    width: 133px;
+  }
+
+  .Upload_Price_right_div {
+    margin-bottom: 20px;
+  }
+
+  .Upload_Price_title {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0b0f18;
+
+    width: 145px;
+    margin-top: 15px;    
+  }
+
+  .Upload_Price_button_div {    
+    width: 520px;            
+    display: flex;    
+  }
+
+  .Upload_Category_button_party {
+    width: 260px;
+    height: 30px;
+
+    display: inline-flex;    
+    align-items: center;
+    align-content: flex-start;
+    
+    
+    
+  }
+
+  .Upload_Category_button_desc{
+    font-family: "Montserrat-Medium";
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0b0f18;
+  }
+}
+

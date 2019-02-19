@@ -1,0 +1,80 @@
+@import 'utils';
+
+.Account_Country {      
+  position: relative;
+  height: 60px;
+
+  .Account_Cooperate_div {
+    width: 130px;   
+    display: flex;
+  }
+
+  .Account_Cooperate_left_div {
+    width: 130px;        
+  }
+
+  .Account_Cooperate_title {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0b0f18;        
+
+    width: 130px;    
+
+    margin-top: 13px;
+  }
+
+  .Account_Cooperate_sub_title {
+    margin-top: 0px;
+    margin-left: 30px;
+    width: 110px;     
+  }
+  
+  .Account_Cooperate_right_div {
+    
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+    
+  }
+
+  .Account_Cooperate_desc {
+    font-family: "Montserrat-Medium";
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    color: #4a4a4a;
+
+    width: 289px;
+  }
+
+  .Account_Cooperate_select {
+    width: 500px;
+    height: 48px;
+    border-radius: 8px; 
+    border: 1px solid #e8e8e8;      
+  }  
+
+  .Account_Cooperate_right_select {
+    width: 560px;    
+    
+  }
+
+  .Account_Cooperate_right_input {
+    border-radius: 15px;
+    background-color: red;
+  }
+}
+

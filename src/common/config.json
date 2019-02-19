@@ -1,0 +1,14 @@
+{
+  "name": "stipop artist website",
+  "production": {
+    "key": "privkey.pem",
+    "cert": "fullchain.pem",
+    "serverURL": "http://localhost:9995/api"
+  },
+  "development": {
+    "serverURL": "http://localhost:9995/api"
+  },
+  "createServer": "http",
+  "log": true,
+  "port": 9995
+}

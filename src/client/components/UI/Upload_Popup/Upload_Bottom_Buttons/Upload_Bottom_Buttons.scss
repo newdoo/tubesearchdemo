@@ -1,0 +1,36 @@
+@import 'utils';
+
+.Upload_Bottom_Buttons {
+  position: relative;       
+  width: 96%;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  .Upload_Bottom_Button_Pink {
+    font-family: "Montserrat-Bold";
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #ff3b94;
+    
+    width: 296px;
+    height: 70px;
+    
+    text-transform: none; 
+
+    margin-right: 10px;
+  }
+
+  .Upload_Bottom_Button_Block {
+    background-color: #c9c9c9;
+  }
+  
+}
+

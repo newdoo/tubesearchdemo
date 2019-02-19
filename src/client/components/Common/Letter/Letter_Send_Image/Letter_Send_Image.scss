@@ -1,0 +1,21 @@
+@import 'utils';
+
+.Letter_Send_Image {
+  position: relative;
+  margin-top:  12px;
+
+  width: 100%;  
+  height: 94px;
+  border-radius: 10px;  
+  border: 1px solid #dfdfdf;  
+
+  .Letter_Send_Image_select {
+    width: 74px;
+    height: 74px;
+    border-radius: 19px;    
+    border: 1px solid #dfdfdf;  
+    margin: 10px;
+    margin-right: 0px;
+    
+  }
+}

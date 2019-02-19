@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>98690647-3DDF-4738-9FCD-339FD3CC4052</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0.981818182 0 17.3454545 0 17.3454545 16 0.981818182 16"></polygon>
+    </defs>
+    <g id="artist" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="artist_studio_account" transform="translate(-1192.000000, -242.000000)">
+            <g id="write" transform="translate(1191.000000, 242.273837)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M0.991081263,15.5464557 C0.930502577,15.8143376 1.17665376,16.0543733 1.44931973,15.9891964 L5.15863494,15.1055086 L1.83178842,11.8348394 L0.991081263,15.5464557 Z M17.0117303,1.88138191 L15.5272432,0.422775705 C14.9535401,-0.140925235 14.0219649,-0.140925235 13.4463127,0.422775705 L12.0243224,1.82000499 L15.3530562,5.09070466 L17.0117303,3.46094836 C17.4566959,3.02371002 17.4566959,2.31862025 17.0117303,1.88138191 Z M11.1571314,2.67022274 L14.4858652,5.94086162 L6.05992079,14.2199057 L2.73307427,10.9492364 L11.1571314,2.67022274 Z" id="Fill-1" fill="#9B9B9B" fill-rule="evenodd" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

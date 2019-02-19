@@ -1,0 +1,34 @@
+@import 'utils';
+
+.Account_Popup {
+  position: relative;  
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 35px;    
+  
+  .Account_Popup_default {
+    width: 95%;
+    
+    margin-left: 60px;
+    margin-top:30px;
+  }
+  .Account_Popup_div {    
+    width: 100%;    
+    border-radius: 10px 0px 10px 10px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);    
+    background-color: #ffffff;
+    display: flex;
+  }
+
+  .Account_Popup_left_div {    
+    width: 56%;            
+  }
+
+  .Account_Popup_right_div {
+    width: 44%;        
+  }
+   
+
+   
+}
+

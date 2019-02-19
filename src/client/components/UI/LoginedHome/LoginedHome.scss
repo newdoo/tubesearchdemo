@@ -1,0 +1,32 @@
+@import 'utils';
+
+.LoginedHome {
+  position: relative;  
+  width: 1102.4px;
+  height: 813.4px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+
+  .LoginedHome_line {
+    margin-left: 3%;                
+    padding-top: 35px;
+    width: 95%;
+    height: 230px;
+    
+    display: flex;    
+    align-content: center;    
+    justify-content: space-between;
+  }
+
+  .LoginedHome_divide {
+    height: 40px;
+    width: auto;    
+    border-bottom: 1px solid#bfbfbf;       
+  }
+
+  .LoginedHome_br {
+    height: 40px;
+  }
+}
+

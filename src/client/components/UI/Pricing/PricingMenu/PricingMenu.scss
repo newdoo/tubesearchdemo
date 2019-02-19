@@ -1,0 +1,73 @@
+@import 'utils';
+
+.PricingMenu {
+        position: relative;
+
+        &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: -500%;
+                width: 1000%;
+                height: 2px;
+                z-index: -1;
+                background: #f5f5f5;
+        }
+
+        .PricingMenu_div {
+                height: 70px;
+                width:  992px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-content: flex-start;                
+                border-radius: 10px 10px 0px 0px;         
+                margin-top: 10px;
+        }
+
+        .ProductMenu_menu {
+                width: 499px;
+                height: 72px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;               
+
+        }
+
+        .ProductMenu_menu_select {                
+                border-radius: 10px 10px 0px 0px;
+                background-color: #ffffff;
+                border: 2px solid#f5f5f5;     
+                border-bottom-color : #ffffff;   
+        }
+
+        .ProductMenu_link {
+                font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+                font-size: 19px;
+                font-weight: 600;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.95;
+                letter-spacing: normal;
+                text-align: center;
+                color: #0b0f18;
+        }
+
+        @include media('<develop') {
+                .PricingMenu_div {
+                        max-width:  992px;
+                        //min-width: 300px;
+                        width: 100%;
+                        margin-top: 50px;
+                }
+                
+        }
+
+        @include media('<mobile') {
+                .PricingMenu_div {
+                        margin-top: 10px;
+                }
+        }
+}
+

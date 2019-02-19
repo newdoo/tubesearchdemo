@@ -1,0 +1,57 @@
+@import 'utils';
+
+.Letter_Reader {
+  position: relative;  
+  width: 100%;  
+  border-radius: 10px;
+  background-color: #ffffff;      
+
+  .Letter_Reader_sender {
+    font-family: "Montserrat-Bold";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin-left: 15px;
+  }
+
+  .Letter_Reader_date {
+    font-family: "Montserrat-Medium";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin-left: 10px;
+  }
+
+  .Letter_Reader_underline {
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px solid#bfbfbf;           
+  }
+
+  .Letter_Reader_desc {
+    margin-top: 10px;
+    margin-left: 14px;
+    text-align: left;
+    width: 485px;    
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.81;
+    letter-spacing: normal;
+    color: #0b0f18;
+  }
+
+  .Letter_Reader_br {
+    height: 20px;
+  }
+}

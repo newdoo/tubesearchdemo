@@ -1,0 +1,57 @@
+@import 'utils';
+
+.LoginTextField {      
+  
+  .LoginTextField_inline {
+    display: flex;    
+  }
+
+  .LoginTextField_Title {
+    font-family: 'Montserrat', 'NanumSquareRound', sans-serif;
+
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0b0f18;    
+
+    margin-right: 25px;
+  }
+
+  .LoginTextField_Error {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ff3b94;
+  }
+
+  .LoginTextField_Typo {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: normal;  
+  }
+  
+  @include media('<mobile') {
+
+    .LoginTextField_inline {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .LoginTextField_Error {
+      font-size: 13px;
+    }
+  }
+   
+}
+

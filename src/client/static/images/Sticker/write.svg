@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>EFBC92E5-A67E-4F7F-92A6-53E7DC89A6A5</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0.709090909 0 12.5272727 0 12.5272727 12 0.709090909 12"></polygon>
+    </defs>
+    <g id="artist_kor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="artist_studio_draft" transform="translate(-583.000000, -291.000000)">
+            <g id="write" transform="translate(582.572607, 291.573863)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M0.715780912,11.6598418 C0.672029639,11.8607532 0.849805496,12.04078 1.04673091,11.9918973 L3.72568079,11.3291315 L1.32295831,8.87612952 L0.715780912,11.6598418 Z M12.2862497,1.41103643 L11.2141201,0.317081778 C10.799779,-0.105693926 10.1269747,-0.105693926 9.71122585,0.317081778 L8.68423287,1.36500374 L11.0883184,3.8180285 L12.2862497,2.59571127 C12.6076137,2.26778251 12.6076137,1.73896519 12.2862497,1.41103643 Z M8.05792826,2.00266706 L10.4620138,4.45564622 L4.37660946,10.6649293 L1.97388697,8.2119273 L8.05792826,2.00266706 Z" id="Fill-1" fill="#9B9B9B" fill-rule="evenodd" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

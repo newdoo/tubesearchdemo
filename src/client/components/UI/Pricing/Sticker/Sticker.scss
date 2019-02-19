@@ -1,0 +1,61 @@
+@import 'utils';
+
+.Product_App {
+        position: relative;
+
+        .Product_App_blank {
+                width: 100%;
+                height:100px;
+        }
+
+        .Product_App_img_bottom {
+                width: 100%;
+                height:30px;
+        }
+
+        .Product_DialogMessage_center {                                
+                min-height: 400px;
+                display: flex;
+                align-items: center;         
+        }
+
+        .Product_About_Button {
+                width: 257px;
+                height: 68px;
+
+                font-family: "Montserrat-Bold";
+                text-transform: none;    
+                font-size: 20px;
+                border: 2px solid;
+                background-Color: transparent;               
+                text-transform:none;                   
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.85;
+                letter-spacing: -0.3px;
+                text-align: center;
+                color: #ff3b94;
+
+                
+                margin: 10px;
+        }
+
+        .Product_App_button_bottom {
+                width: 100%;
+                height:96px;                        
+                @include media('<develop') {
+                        height:0px;     
+                }
+        }
+
+        .Product_App_img {
+                width: 208px;
+                height: 420px;
+                @include media('<develop') {
+                        width: 137px;
+                        height:277px;     
+                }
+        }
+
+}

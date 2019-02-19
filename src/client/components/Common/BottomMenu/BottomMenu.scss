@@ -1,0 +1,238 @@
+@import 'utils';
+
+.BottomMenu {
+  color: #9b9b9b;  
+  height: 200px;  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &.white {
+    color: #fff;
+  }
+
+  .BottomMenu__Hover {
+    &:hover {
+      color: rgba(255, 59, 148, 0.8);
+    }
+
+    &.BottomMenu__Hover__White {
+      &:hover {
+        color: #4a4a4a;
+      }
+    }
+  }
+
+  //Stipop Inc. 글씨 위치 
+  .BottomMenu__StipopInc {
+    position: absolute;    
+    left: 68px;
+    top: 0px;     
+
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  .BottomMenu__About_Us {
+    position: absolute;    
+    left: 68px;
+    top: 46px;  
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+  }
+
+  .BottomMenu__Faq {
+    position: absolute;    
+    left: 68px;
+    top: 71px;  
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;  
+  }
+
+   // contact
+  .BottomMenu__Contact__Us {
+    position: absolute;    
+    left: 68px;
+    top: 96px;  
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;  
+  }
+
+  // all right 
+  .BottomMenu__Rights {
+    position: absolute;    
+    left: 1162px;
+    top: 43px;    
+    
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right; 
+  }
+
+  // terms & condition 위치
+  .BottomMenu__Condition__Div {
+    position: absolute;    
+    left: 1212px;
+    top: 78px;  
+       
+    display: flex;    
+  }
+
+  // terms & condition 글씨 설정
+  .BottomMenu__Condition__Typo {
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  // 아이콘들 instagram
+  .BottomMenu__Instagram {
+    position: absolute;    
+    left: 1274.2px;
+    top: 0px;  
+    width: 21.2px;
+    height: 21.2px;
+  }
+
+  // 아이콘들 facebook
+  .BottomMenu__Facebook {
+    position: absolute;    
+    left: 1235.8px;
+    top: 0px;         
+    width: 20.5px;
+    height: 20.5px;
+  }
+
+  // 아이콘들 트위터
+  .BottomMenu__Twitter {
+    position: absolute;    
+    left: 1313.3px;
+    top: 3px;     
+
+    width: 19.8px;
+    height: 16.1px;
+  }
+
+  // 아이콘들 유투브
+  .BottomMenu__Youtube {
+    position: absolute;    
+    left: 1349.5px;
+    top: 3px;     
+
+    width: 21.9px;
+    height: 16.8px;
+  }
+
+  @include media('<develop') {
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    position: relative;
+    margin-top: 100px;
+
+    .BottomMenu__StipopInc {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      left: auto;
+      top: auto;
+      margin-bottom: 10px;
+    }
+
+    .BottomMenu__Condition__Div {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      left: auto;
+      top: auto;
+      margin-bottom: 10px;
+    }
+
+    .BottomMenu__About_Us {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      left: auto;
+      top: auto;
+      margin-bottom: 10px;
+    }
+
+    .BottomMenu__Contact__Us {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      left: auto;
+      top: auto;
+      margin-bottom: 10px;
+    }
+
+    .BottomMenu__Faq {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      left: auto;
+      top: auto;
+      margin-bottom: 10px;
+    }
+
+    .BottomMenu__Rights {
+      position: relative;
+      left: auto;
+      top: 10px;
+      text-align: center;    
+      
+      margin-bottom: 18px;
+    }
+
+    .BottomMenu__SnsWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    .StipopBottom__Sns {
+      margin: 0 8px;
+    }
+
+  }
+}
+

@@ -1,0 +1,1 @@
+export { default } from './What_To_Mind';

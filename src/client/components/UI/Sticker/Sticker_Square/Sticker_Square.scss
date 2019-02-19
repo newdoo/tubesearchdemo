@@ -1,0 +1,81 @@
+@import 'utils';
+
+.Sticker_Square {
+  position: relative;     
+  width: 100%;
+  
+  .Sticker_Square_div {        
+    width: 85%;    
+    margin-top: 20px;
+  }
+  .Sticker_Square_date {
+    font-family: "Montserrat-Medium";
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    
+    margin-right: 10px;
+  }
+
+  .Sticker_Square_icon_margin {
+    margin-left : 6px;    
+  }
+
+  .Sticker_Square_title {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+
+  .Sticker_Menu_div {
+    font-family: "Montserrat-Bold";
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.06;
+    letter-spacing: normal;
+    text-align: center;
+    color: #0b0f18;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Sticker_Menu_title_div {
+    width: 190px;        
+  }
+
+  .Sticker_Menu_title_archived {
+    width: 190px;    
+  }
+  
+  .Sticker_Square_images {
+    height: 300px;        
+    overflow: hidden;
+    
+  }
+
+  .Sticker_Square_br {
+    margin-bottom: 20px;    
+  }
+
+  .Sticker_Square_icon_margin1 {
+    width: 33%;
+  }
+
+  .Sticker_Square_underline {    
+    border-bottom: 3px solid#ff3b94;       
+  }
+}
+
