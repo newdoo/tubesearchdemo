@@ -17,12 +17,17 @@ class MyDocument extends Document {
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
           <meta httpEquiv="X-UA-Compatible" content="IE-edge, chrome=1" />
 
+          {/* <title>YouTube Community</title> */}
           <link rel="icon" href="/static/favicon.png" type="image/png" sizes="16x16"/>
           <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700|PT+Sans:700" rel="stylesheet"/>
           <link href="https://fonts.googleapis.com/css?family=Nanum Gothic:400" rel="stylesheet"/>
           <link href="https://fonts.googleapis.com/css?family=Baloo Bhai:400,700" rel="stylesheet"/>
 
           <script src="/static/js/svgxuse.js" defer></script>
+
+          <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+          <script type="text/javascript" src="//www.google.com/jsapi"></script>
+          <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=onJSClientLoad"></script>
         </Head>
         <body>
           <Main />

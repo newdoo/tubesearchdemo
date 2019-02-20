@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
-import ui from './ui';
-import login from './login';
+import youtube from './youtube';
 import { penderReducer } from 'redux-pender';
 
 export default combineReducers({
-    ui,
-    login,
+    youtube,
     pender: penderReducer
 });

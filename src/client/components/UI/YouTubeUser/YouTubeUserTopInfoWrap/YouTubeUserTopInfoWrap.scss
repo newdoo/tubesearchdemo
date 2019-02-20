@@ -1,0 +1,80 @@
+@import 'utils';
+
+.YouTubeUserTopInfoWrap {
+    width: 1260px;
+    margin: 0 auto;
+    background: #fff;
+    height: 90px;
+    position: relative;
+
+    .YouTubeUserTopInfoAvatar {
+        background: #fff;
+        float: left;
+        height: 140px;
+        width: 140px;
+        border-radius: 10px;
+        border: 5px solid #fff;
+        margin-top: -40px;
+        margin-left: 30px;
+        -webkit-box-shadow: 0 0 5px 0 rgba(51,3,0,.2);
+        -moz-box-shadow: 0 0 5px 0 rgba(51,3,0,.2);
+        box-shadow: 0 0 5px 0 rgba(51,3,0,.2);
+    }
+
+    .YouTubeUserTopInfoBlockTop {
+        float: left;
+        margin-top: 2px;
+        margin-left: 10px;
+
+        .YouTubeUserTopInfoBlockTop__Title {
+            float: left;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin: 0px;
+            padding: 0px;
+            margin-right: 5px;
+        }
+
+        .YouTubeUserTopInfoBlock {
+            margin-top: 6px;
+            width: 1080px;
+
+            .YouTubeUserTopInfo {
+                float: left;
+                margin-right: 20px;
+                text-align: center;
+
+                .YouTubeUserTopLight {
+                    text-transform: uppercase;
+                    font-size: .8em;
+                    color: #555;
+                }
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .YouTubeUserTopInfoSubscribers {
+                font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: -0.3px;
+                text-align: center;
+                color: #ffffff;
+                background-color: #ff0000;
+
+                text-transform: none; 
+                border-radius: 8px;
+
+                &:hover {
+                    background-color: rgba(255, 59, 148, 0.8);
+                }
+            }
+        }
+    }
+}

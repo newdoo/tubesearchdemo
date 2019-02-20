@@ -10,5 +10,6 @@
   },
   "createServer": "http",
   "log": true,
-  "port": 9995
+  "port": 9995,
+  "youtubeAPIKey": "AIzaSyD9L2HR1-5jd-g317cskOmjVItWykPI4yM"
 }

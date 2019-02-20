@@ -1,21 +1,33 @@
 import React from 'react';
 
+//mateirl-ui
+import { AppBar, Drawer, Typography, Fab, Button, Divider, IconButton, MuiThemeProvider, Tabs, Tab, Menu, MenuItem, Select, TextField } from '@material-ui/core/';
+
 import SearchByChannelID from '@components/UI/SearchByChannelID';
+import SearchByChannelName from '@components/UI/SearchByChannelName';
 
 class MainContainer extends React.Component {
 
-    componentDidMount() {
-        // const oauth = Youtube.authenticate({
-        //     type: "key",
-        //     key: "AIzaSyD9L2HR1-5jd-g317cskOmjVItWykPI4yM"
-        // });
-        // console.log(oauth);
+    state = {
+        value: 0,
     }
 
-    render() {        
+    handleChange = (event, value) => {
+        this.setState({ value });
+    }
+
+    render() {
+        const { value } = this.state;   
         return (
-            <div>            
-                <SearchByChannelID />
+            <div>     
+                <AppBar position="static">
+                    <Tabs value={value} onChange={this.handleChange}>
+                        <Tab label="SearchByChannelID" />
+                        <Tab label="SearchByChannelName" />
+                    </Tabs>
+                </AppBar>   
+                {value === 0 &&  <SearchByChannelID />}   
+                {value === 1 &&  <SearchByChannelName />}   
             </div>
         );
     }

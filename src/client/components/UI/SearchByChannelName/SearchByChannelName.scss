@@ -1,0 +1,61 @@
+@import 'utils';
+
+.SearchByChannelID {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 35px;
+
+    .SearchByChannelID__Title {
+        font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #0b0f18;
+
+        margin-top: 64px;
+    }
+
+    .SearchByChannelID__TypoWrp {
+        width: 640px;
+        display: flex;
+        align-items: center;
+
+        .SearchByChannelID__Typo {
+            padding: 0 16px 0 16px;
+        }
+
+        .SearchByChannelID__Typo__Button {
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: -0.3px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #ff3b94;
+            height: 64px;
+
+            text-transform: none; 
+            border-radius: 8px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+
+            &:hover {
+                background-color: rgba(255, 59, 148, 0.8);
+            }
+        }
+    }
+
+    
+}

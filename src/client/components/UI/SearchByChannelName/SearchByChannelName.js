@@ -1,7 +1,6 @@
 import React from 'react';
-
 import classNames from 'classnames/bind';
-import styles from './SearchByChannelID.scss';
+import styles from './SearchByChannelName.scss';
 const cx = classNames.bind(styles);
 
 //mateirl-ui
@@ -10,12 +9,6 @@ import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from '@material-ui/icons/Search';
 
 import network from '@lib/network';
-
-import YouTubeUser from '@components/UI/YouTubeUser';
-
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as youtubeActions from '@store/modules/youtube';
 
 const TextFieldstyles = theme => ({
     cssOutlinedInput: {
@@ -37,7 +30,7 @@ const TextFieldstyles = theme => ({
     },
   });
 
-class SearchByChannelID extends React.Component {
+class SearchByChannelName extends React.Component {
 
     state = {
         value: ''
@@ -52,17 +45,14 @@ class SearchByChannelID extends React.Component {
         console.log('handleSearch');
         const recv = await network('youtube','SearchByChannelID', {id: this.state.value});
         console.log(recv);
-
-        const { YoutubeActions } = this.props;
-        YoutubeActions.setChannelData({channel: recv.channel});
     }
 
     render() {
         const { value } = this.state;
-        const { classes, channel } = this.props;  
+        const { classes } = this.props;  
         return (
             <div className={cx('SearchByChannelID')}>
-                <Typography className={cx('SearchByChannelID__Title')}>SearchByChannelID</Typography> 
+                <Typography className={cx('SearchByChannelID__Title')}>SearchByChannelName</Typography> 
                 <div className={cx('SearchByChannelID__TypoWrp')}>
                     <TextField                                               
                         margin="normal"
@@ -84,17 +74,9 @@ class SearchByChannelID extends React.Component {
                         <SearchIcon/>
                     </Button>
                 </div>
-                {channel.id !== undefined && <YouTubeUser />}
             </div>
         );
     }
 }
 
-export default withStyles(TextFieldstyles)(connect(
-    (state) => ({
-        channel: state.youtube.get('user').get('channel'),        
-    }),
-    (dispatch) => ({
-        YoutubeActions: bindActionCreators(youtubeActions, dispatch),    
-    })
-)(SearchByChannelID));
+export default withStyles(TextFieldstyles)(SearchByChannelName);
