@@ -1,0 +1,34 @@
+@import 'utils';
+
+.TopHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 64px;
+
+    .TopHeader__Login {
+        color: #065fd4;
+        margin-right: 16px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .TopHeader__Photo {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        margin: 0 8px;
+        border-radius: 50%;
+        background-color: transparent;
+        overflow: hidden;
+        margin-right: 24px;
+
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+    }
+}

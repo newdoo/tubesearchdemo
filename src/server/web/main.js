@@ -18,7 +18,7 @@ const devProxy = {
   }
 }
 
-// const Youtube = require("youtube-api")
+const Youtube = require("youtube-api")
 // const fs = require("fs")
 // const readJson = require("r-json")
 // const Lien = require("lien")
@@ -47,6 +47,24 @@ app
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   
       return req.params.msg === undefined ? app.render(req, res, '/') : api(req, res);
+    });
+
+    server.get('/oauth2callback', (req, res) => {
+      console.log('/oauth2callback callback');
+      console.log(req.query.code);
+
+      const oauth = Youtube.authenticate({
+        type: "oauth", 
+        client_id: config.youtubeClientID,
+        client_secret: config.youtubeClientSecert, 
+        redirect_url: config.youtubeRedirectUrl
+      });
+
+      oauth.getToken(req.query.code, (err, tokens) => {
+        console.log(tokens);
+      });
+
+      return app.render(req, res, '/');
     });
 
     // Default catch-all handler to allow Next.js to handle all other routes

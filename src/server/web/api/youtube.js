@@ -1,6 +1,31 @@
 const Youtube = require("youtube-api")
 const config = require('../../../common/config')
 const api = require('../../utils/youtubeAPI')
+const opn = require("opn")
+
+const login = async(msg) => {
+  console.log('login');
+
+  const oauth = Youtube.authenticate({
+    type: "oauth",
+    client_id: config.youtubeClientID,
+    client_secret: config.youtubeClientSecert,
+    redirect_url: config.youtubeRedirectUrl,
+    access_type: "online",
+    scope: ["https://www.googleapis.com/auth/youtube"],
+    response_type: "code"
+  });
+
+  oauth.generateAuthUrl({
+    access_type: "offline", 
+    scope: ["https://www.googleapis.com/auth/youtube"]
+  });
+
+  // opn(oauth.generateAuthUrl({
+  //   access_type: "offline", 
+  //   scope: ["https://www.googleapis.com/auth/youtube"]
+  // }));
+}
 
 const SearchByChannelID = async(msg) => { 
 
@@ -60,5 +85,40 @@ const SearchByChannelID = async(msg) => {
   return {result: 'ok', channel: channels[0]};
 }
 
-const handler = { SearchByChannelID }
+const SubscribersOn = async(msg) => {
+
+  console.log('SubscribersOn : ' + msg.id);
+
+  const oauth = Youtube.authenticate({
+    type: "oauth",
+    client_id: config.youtubeClientID,
+    client_secret: config.youtubeClientSecert,
+    redirect_url: config.youtubeRedirectUrl,
+    access_type: "offline",
+    scope: ["https://www.googleapis.com/auth/youtube"],
+    response_type: "code"
+  });
+
+  opn(oauth.generateAuthUrl({
+    access_type: "offline", 
+    scope: ["https://www.googleapis.com/auth/youtube"]
+  }));
+
+  // const response = await api.SubscriptionsInsert({
+  //   auth: oauth,
+  //   part: 'snippet,contentDetails',
+  //   snippet: {
+  //     resourceId: {
+  //       kind: "youtube#channel",
+  //       channelId: msg.id
+  //     }
+  //   }
+  // });
+
+  // console.log(response);
+
+  return {result: 'ok'};
+}
+
+const handler = { login, SearchByChannelID, SubscribersOn }
 module.exports = recv => handler[recv.type](recv.data)

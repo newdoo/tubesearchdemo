@@ -11,5 +11,8 @@
   "createServer": "http",
   "log": true,
   "port": 9995,
-  "youtubeAPIKey": "AIzaSyD9L2HR1-5jd-g317cskOmjVItWykPI4yM"
+  "youtubeAPIKey": "AIzaSyD9L2HR1-5jd-g317cskOmjVItWykPI4yM",
+  "youtubeClientID": "393165160055-ndcpq998sftuh499pv0o8h4vvq6uinht.apps.googleusercontent.com",
+  "youtubeClientSecert": "vYOWLpCxwlv3M8t1B5FGaD7o",
+  "youtubeRedirectUrl": "http://localhost:9995/oauth2callback"
 }

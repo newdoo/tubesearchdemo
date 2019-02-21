@@ -3,6 +3,7 @@ import React from 'react';
 //mateirl-ui
 import { AppBar, Drawer, Typography, Fab, Button, Divider, IconButton, MuiThemeProvider, Tabs, Tab, Menu, MenuItem, Select, TextField } from '@material-ui/core/';
 
+import TopHeader from '@components/Common/TopHeader';
 import SearchByChannelID from '@components/UI/SearchByChannelID';
 import SearchByChannelName from '@components/UI/SearchByChannelName';
 
@@ -19,7 +20,8 @@ class MainContainer extends React.Component {
     render() {
         const { value } = this.state;   
         return (
-            <div>     
+            <div>
+                <TopHeader />   
                 <AppBar position="static">
                     <Tabs value={value} onChange={this.handleChange}>
                         <Tab label="SearchByChannelID" />
