@@ -1,3 +1,4 @@
+const db = require('../../mongoDB/schema')
 const Youtube = require("youtube-api")
 const config = require('../../../common/config')
 const api = require('../../utils/youtubeAPI')
@@ -5,26 +6,62 @@ const opn = require("opn")
 
 const login = async(msg) => {
   console.log('login');
+  console.log(msg.user);
+
+  if(await db.accountSchema.findOne({uid: msg.user.user.uid}) !== null) {
+    // Account 인스턴스를 업데이트 합니다.
+    await db.accountSchema.update({uid:msg.user.user.uid}, {user:msg.user});
+  } else {
+    // Account 인스턴스를 생성합니다.
+    const account = new db.accountSchema({
+      uid: msg.user.user.uid, 
+      user: msg.user
+    });
+    await account.save(); // 데이터베이스에 등록합니다.
+  }
+
+  return {result: 'ok'}; 
+}
+
+// 내가 구독한 채널 리스트 반환
+const subscribersByChannel = async(msg) => {
+  console.log('subscribersByChannel : ' + msg.uid);
+
+  const account = await db.accountSchema.findOne({uid: msg.uid});
+  console.log(account.user.credential.accessToken);
 
   const oauth = Youtube.authenticate({
     type: "oauth",
-    client_id: config.youtubeClientID,
-    client_secret: config.youtubeClientSecert,
-    redirect_url: config.youtubeRedirectUrl,
-    access_type: "online",
-    scope: ["https://www.googleapis.com/auth/youtube"],
-    response_type: "code"
+    token: account.user.credential.accessToken
   });
 
-  oauth.generateAuthUrl({
-    access_type: "offline", 
-    scope: ["https://www.googleapis.com/auth/youtube"]
-  });
+  console.log('a');
 
-  // opn(oauth.generateAuthUrl({
-  //   access_type: "offline", 
-  //   scope: ["https://www.googleapis.com/auth/youtube"]
-  // }));
+  //oauth.setCredentials(account.user.credential.idToken);
+
+  //console.log('b');
+  try {
+    const response = await api.SubscriptionsList({
+      auth: oauth,
+      part: 'id,snippet,contentDetails',
+      mine: true,
+    });
+    console.log(response);
+  } catch(e) {
+    console.log(e);
+  }
+  
+  console.log('c');
+
+  return {result: 'ok'}; 
+}
+
+// 나를 구독한 채널 리스트 반환
+const subscribersMyChannel = async(msg) => {
+
+
+
+  return {result: 'ok'}; 
 }
 
 const SearchByChannelID = async(msg) => { 
@@ -120,5 +157,5 @@ const SubscribersOn = async(msg) => {
   return {result: 'ok'};
 }
 
-const handler = { login, SearchByChannelID, SubscribersOn }
+const handler = { login, subscribersByChannel, subscribersMyChannel, SearchByChannelID, SubscribersOn }
 module.exports = recv => handler[recv.type](recv.data)

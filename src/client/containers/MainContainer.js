@@ -6,6 +6,7 @@ import { AppBar, Drawer, Typography, Fab, Button, Divider, IconButton, MuiThemeP
 import TopHeader from '@components/Common/TopHeader';
 import SearchByChannelID from '@components/UI/SearchByChannelID';
 import SearchByChannelName from '@components/UI/SearchByChannelName';
+import Subscriptions from '@components/UI/Subscriptions';
 
 class MainContainer extends React.Component {
 
@@ -24,12 +25,16 @@ class MainContainer extends React.Component {
                 <TopHeader />   
                 <AppBar position="static">
                     <Tabs value={value} onChange={this.handleChange}>
+                        <Tab label="Home" />
                         <Tab label="SearchByChannelID" />
                         <Tab label="SearchByChannelName" />
+                        <Tab label="Subscriptions" />
                     </Tabs>
                 </AppBar>   
-                {value === 0 &&  <SearchByChannelID />}   
-                {value === 1 &&  <SearchByChannelName />}   
+                {value === 0 &&  <div>Home</div>}   
+                {value === 1 &&  <SearchByChannelID />}   
+                {value === 2 &&  <SearchByChannelName />}
+                {value === 3 &&  <Subscriptions />}
             </div>
         );
     }

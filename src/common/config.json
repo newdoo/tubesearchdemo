@@ -3,16 +3,18 @@
   "production": {
     "key": "privkey.pem",
     "cert": "fullchain.pem",
-    "serverURL": "http://localhost:9995/api"
+    "serverURL": "http://localhost:9995/api",
+    "mongodb": "mongodb://localhost:27017"
   },
   "development": {
-    "serverURL": "http://localhost:9995/api"
+    "serverURL": "http://localhost:9995/api",
+    "mongodb": "mongodb://localhost:27017"
   },
   "createServer": "http",
   "log": true,
   "port": 9995,
-  "youtubeAPIKey": "AIzaSyD9L2HR1-5jd-g317cskOmjVItWykPI4yM",
-  "youtubeClientID": "393165160055-ndcpq998sftuh499pv0o8h4vvq6uinht.apps.googleusercontent.com",
-  "youtubeClientSecert": "vYOWLpCxwlv3M8t1B5FGaD7o",
-  "youtubeRedirectUrl": "http://localhost:9995/oauth2callback"
+  "youtubeAPIKey": "AIzaSyDnfw8gZzoBcr3gz-QY3OPm05gkOuDvEt0",
+  "youtubeClientID": "592749932088-i53ciufp1fgub532rlu6jledptpj22uj.apps.googleusercontent.com",
+  "youtubeClientSecert": "UXS9B84VovbfPp7rDB4jQIWi",
+  "youtubeRedirectUrl": "https://tubesearchdemo-5044b.firebaseapp.com/__/auth/handler"
 }

@@ -9,6 +9,8 @@ const app = next({dir: './src/client', dev})
 const handler = routes.getRequestHandler(app)
 const api = require('./api/handler')
 const config = require('../../common/config')
+const conn = require('../mongoDB/conn')
+conn();
 
 const devProxy = {
   '/webTest': {
