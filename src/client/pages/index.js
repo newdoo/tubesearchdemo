@@ -23,6 +23,8 @@ class Index extends React.Component {
 
     this.onAuthStateChanged();
     this.onAuthLoginCheck();
+
+    console.log(auth().currentUser);
   }
 
   onAuthStateChanged = async() => {
