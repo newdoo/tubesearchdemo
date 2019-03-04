@@ -7,7 +7,9 @@ var config = {
     databaseURL: "https://tubesearchdemo-5044b.firebaseio.com",
     projectId: "tubesearchdemo-5044b",
     storageBucket: "tubesearchdemo-5044b.appspot.com",
-    messagingSenderId: "592749932088"
+    messagingSenderId: "592749932088",
+    clientId: "592749932088-i53ciufp1fgub532rlu6jledptpj22uj.apps.googleusercontent.com",
+    clientSecret: "vYOWLpCxwlv3M8t1B5FGaD7o",
 };
 
 const signInWithRedirect = async(provider) => {

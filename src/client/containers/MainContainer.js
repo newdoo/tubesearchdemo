@@ -7,6 +7,8 @@ import TopHeader from '@components/Common/TopHeader';
 import SearchByChannelID from '@components/UI/SearchByChannelID';
 import SearchByChannelName from '@components/UI/SearchByChannelName';
 import Subscriptions from '@components/UI/Subscriptions';
+import UdemyCreator from '@components/UI/UdemyCreator';
+import UdemyUser from '@components/UI/UdemyUser';
 
 class MainContainer extends React.Component {
 
@@ -29,12 +31,16 @@ class MainContainer extends React.Component {
                         <Tab label="SearchByChannelID" />
                         <Tab label="SearchByChannelName" />
                         <Tab label="Subscriptions" />
+                        <Tab label="UdemyCreator" />
+                        <Tab label="UdemyUser" />
                     </Tabs>
                 </AppBar>   
                 {value === 0 &&  <div>Home</div>}   
                 {value === 1 &&  <SearchByChannelID />}   
                 {value === 2 &&  <SearchByChannelName />}
                 {value === 3 &&  <Subscriptions />}
+                {value === 4 &&  <UdemyCreator />}
+                {value === 5 &&  <UdemyUser />}
             </div>
         );
     }
