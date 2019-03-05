@@ -1,0 +1,25 @@
+@import 'utils';
+
+.UITextField {      
+  
+  .UITextField__TitleWrp {
+    display: flex;    
+  }
+
+  .UITextField__Title {  
+    font-size: 18px;    
+    color: #0b0f18; 
+    margin-right: 25px;
+  }
+
+  .UITextField__Error {   
+    font-size: 16px;    
+    color: #ff3b94;
+  }
+
+  .UITextField__Typo {
+    font-size: 17px;    
+  }
+
+}
+

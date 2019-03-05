@@ -1,11 +1,29 @@
 const mongoose = require('mongoose')
-// const moment = require('moment')
 // const postSchema = require('./models/post')
 
 const accountSchema = new mongoose.Schema({
   uid: {type: String, index: true, required: true, unique: true},
   user: JSON,
 });
+
+const projectSchema = {
+  title: {type: String, default: ""},
+  desc: {type: String, default: ""},
+  price: {type: Number, default: 0},
+  open: {type: Boolean, default: false},
+  createDate: {type: Number, default: Date.now},
+  updateDate: {type: Number, default: Date.now},
+};
+
+const udemySchema = new mongoose.Schema({
+  uid: {type: String, index: true, required: true, unique: true},
+  project: [projectSchema],
+})
+
+
+
+
+
 
 // const userSchema = new mongoose.Schema({
 //   nick: {type: String, index: true, required: true, unique: true},
@@ -49,6 +67,7 @@ const accountSchema = new mongoose.Schema({
 
 module.exports = {
   accountSchema: mongoose.model('account', accountSchema),
+  udemySchema: mongoose.model('udemy', udemySchema),
   // userSchema: mongoose.model('user', userSchema),
   // historySchema: mongoose.model('history', historySchema),
   // depositSchema: mongoose.model('deposit', depositSchema),

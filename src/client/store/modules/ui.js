@@ -5,6 +5,9 @@ import { pender } from 'redux-pender';
 
 // action types
 const MENU_DATA = 'ui/MENU_DATA';
+const CREATOR_PROJECT_DATA = 'ui/CREATOR_PROJECT_DATA';
+
+
 const MOBILE_DATA = 'ui/MOBILE_DATA';
 const UPLOAD_DATA = 'ui/UPLOAD_MENU_DATA';
 const LOGIN_MENU_DATA = 'ui/LOGIN_MENU_DATA';
@@ -18,6 +21,9 @@ const LOGIN_EMAIL = 'ui/LOGIN_EMAIL';
 
 // action creators
 export const setMenu = createAction(MENU_DATA);
+export const setCreatorProject = createAction(CREATOR_PROJECT_DATA);
+
+
 export const setMobileMenu = createAction(MOBILE_DATA);
 export const setUploadMenu = createAction(UPLOAD_DATA);
 export const setLoginMenu = createAction(LOGIN_MENU_DATA);
@@ -33,9 +39,13 @@ export const setLoginEmail = createAction(LOGIN_EMAIL);
 // initial state
 const initialState = Map({  
   ui: Map ({
+    menu: 0,
+    creator_project: '',
+
+
     width: 0, 
     height: 0,
-    menu: 0,
+    
     mobile_menu: false,  
     upload_menu:0,
     
@@ -54,6 +64,11 @@ export default handleActions({
   [MENU_DATA]: (state, action) => {
     return state.setIn(['ui','menu'], action.payload.menu );
   },
+  [CREATOR_PROJECT_DATA]: (state, action) => {
+    return state.setIn(['ui','creator_project'], action.payload.project );
+  },
+
+
 
   [MOBILE_DATA]: (state, action) => {
     return state.setIn(['ui','mobile_menu'], action.payload.mobile_menu );

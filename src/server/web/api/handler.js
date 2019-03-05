@@ -1,4 +1,4 @@
-const router = { youtube: require('./youtube') }
+const router = { youtube: require('./youtube'), udemy: require('./udemy') }
 
 const toJson = data => JSON.parse(data)
 

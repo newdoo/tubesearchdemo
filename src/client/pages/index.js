@@ -10,16 +10,22 @@ import 'babel-polyfill';
 
 import { initFirebase, getAuthUser, getRedirectResult, auth } from '@lib/firebase';
 
+import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import * as uiActions from '@store/modules/ui';
 import * as youtubeActions from '@store/modules/youtube';
 
 import network from '@lib/network';
 import * as firebase from 'firebase';
 
-class Index extends React.Component {    
-
+class Index extends React.Component {  
+  
   componentDidMount = async() => {
+    // 라우터 적용
+    const { router } = this.props;    
+    this.checkRouterAsPath(router.asPath);
+
     initFirebase();
 
     this.onAuthStateChanged();
@@ -27,6 +33,40 @@ class Index extends React.Component {
     this.onAuthLoginCheck();
 
     console.log(auth().currentUser);
+  }
+
+  componentWillReceiveProps(nextProps){    
+    // 라우터 적용 값이 바뀔때 마다 체크    
+    const { router } = nextProps;    
+    this.checkRouterAsPath(router.asPath);
+  }
+
+  checkRouterAsPath(path) {
+    console.log(path);
+    const { UiActions } = this.props;
+
+    //url 값에 token 있다면 앞에 부분만 사용한다.
+    let pathArray = path.split('?token=');    
+    switch(pathArray[0]) {
+      case '/':       
+        UiActions.setMenu({menu: 0});
+        break;
+      case '/udemycreator':
+        UiActions.setMenu({menu: 4});
+        break;
+     
+      default:
+      {
+        const regExp = /\/udemycreator\/*/;
+        if(pathArray[0].match(regExp) != null) {
+          const id = pathArray[0].replace("/udemycreator/","");
+          console.log(id);
+          UiActions.setMenu({menu: 4});
+          UiActions.setCreatorProject({project:id});
+        }
+      }
+      break;
+    }
   }
 
   onAuthStateChanged = async() => {
@@ -116,12 +156,14 @@ class Index extends React.Component {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   (state) => ({
+    menu: state.ui.get('ui').get('menu'), 
     user: state.youtube.get('user').get('user'),      
   }),
   (dispatch) => ({
+    UiActions: bindActionCreators(uiActions, dispatch),    
     YoutubeActions: bindActionCreators(youtubeActions, dispatch),    
   })
-)(Index);
+)(Index));
 

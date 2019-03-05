@@ -1,5 +1,10 @@
 import React from 'react';
 
+import { Router } from '@common/routes';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as uiActions from '@store/modules/ui';
+
 //mateirl-ui
 import { AppBar, Drawer, Typography, Fab, Button, Divider, IconButton, MuiThemeProvider, Tabs, Tab, Menu, MenuItem, Select, TextField } from '@material-ui/core/';
 
@@ -12,21 +17,38 @@ import UdemyUser from '@components/UI/UdemyUser';
 
 class MainContainer extends React.Component {
 
-    state = {
-        value: 0,
-    }
-
     handleChange = (event, value) => {
-        this.setState({ value });
+        const { UiActions } = this.props;
+        UiActions.setMenu({menu: value});
+        switch(value) {
+            case 0:
+            Router.pushRoute('home');
+            break;
+            case 1:
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4:
+            Router.pushRoute('udemy_creator');
+            break;
+            case 5:
+            break;
+
+            default:
+            break;
+        }
+        
     }
 
     render() {
-        const { value } = this.state;   
+        const { menu } = this.props;
         return (
             <div>
                 <TopHeader />   
                 <AppBar position="static">
-                    <Tabs value={value} onChange={this.handleChange}>
+                    <Tabs value={menu} onChange={this.handleChange}>
                         <Tab label="Home" />
                         <Tab label="SearchByChannelID" />
                         <Tab label="SearchByChannelName" />
@@ -35,17 +57,23 @@ class MainContainer extends React.Component {
                         <Tab label="UdemyUser" />
                     </Tabs>
                 </AppBar>   
-                {value === 0 &&  <div>Home</div>}   
-                {value === 1 &&  <SearchByChannelID />}   
-                {value === 2 &&  <SearchByChannelName />}
-                {value === 3 &&  <Subscriptions />}
-                {value === 4 &&  <UdemyCreator />}
-                {value === 5 &&  <UdemyUser />}
+                {menu === 0 &&  <div>Home</div>}   
+                {menu === 1 &&  <SearchByChannelID />}   
+                {menu === 2 &&  <SearchByChannelName />}
+                {menu === 3 &&  <Subscriptions />}
+                {menu === 4 &&  <UdemyCreator />}
+                {menu === 5 &&  <UdemyUser />}
             </div>
         );
     }
 }
 
-export default MainContainer;
-
-
+export default connect(
+    (state) => ({
+        menu: state.ui.get('ui').get('menu'),   
+    }),
+    (dispatch) => ({
+        UiActions: bindActionCreators(uiActions, dispatch),  
+    })
+)(MainContainer);
+  

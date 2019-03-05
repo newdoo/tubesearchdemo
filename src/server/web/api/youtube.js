@@ -18,6 +18,11 @@ const login = async(msg) => {
       user: msg.user
     });
     await account.save(); // 데이터베이스에 등록합니다.
+    const udemy = new db.udemySchema({
+      uid: msg.user.user.uid,
+      project: [],
+    });
+    await udemy.save(); // 데이터베이스에 등록합니다.
   }
 
   return {result: 'ok'}; 
