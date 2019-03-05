@@ -8,6 +8,12 @@ const cx = classNames.bind(styles);
 import { Drawer , Typography , Fab , Button , Divider , IconButton, MuiThemeProvider , Tabs , Tab , Menu , MenuItem ,  Select , TextField, Switch  } from '@material-ui/core/';
 import { withStyles } from "@material-ui/core/styles";
 
+import network from '@lib/network';
+
+import { connect } from 'react-redux';
+
+import UISnackbars from '@components/Common/UISnackbars';
+
 const TextFieldstyles = theme => ({
     cssOutlinedInput: {
         height: '55px',
@@ -35,6 +41,7 @@ const TextFieldstyles = theme => ({
 class UdemyProjectUpdate extends React.Component {
 
     state = {
+        id: '',
         title: '',
         desc: '',
         price: 0,
@@ -47,6 +54,7 @@ class UdemyProjectUpdate extends React.Component {
         const { project } = this.props;
         console.log(project);
         this.setState({
+            id: project._id,
             title: project.title,
             desc: project.desc,
             price: project.price,
@@ -66,8 +74,27 @@ class UdemyProjectUpdate extends React.Component {
         this.setState({ [name]: event.target.checked });  
     }
 
-    createProject = () => {
-        console.log('createProject');
+    updateProject = async() => {
+        console.log('updateProject');
+        const { user } = this.props;
+        const {id,title,desc,price,check} = this.state;
+        const params = {
+            uid: user.uid,
+            id: id,
+            title: title,
+            desc: desc,      
+            price: price,      
+            open: check,                   
+        };
+           
+        const recv = await network('udemy', 'updateProject', params);
+        console.log(recv);
+
+        if(recv.result === "ok") {
+            UISnackbars({type: 'success', message: "프로젝트를 업데이트하였습니다."});
+        } else {
+            UISnackbars({type: 'success', message: "프로젝트 업데이트에 실패하였습니다."});
+        }
     }
 
     render() {
@@ -146,7 +173,7 @@ class UdemyProjectUpdate extends React.Component {
                 </div>
                 <div className={cx('row')}>
                     <Button 
-                        onClick={this.createProject} 
+                        onClick={this.updateProject} 
                         variant="outlined" 
                         className={cx('button')}>
                         업데이트
@@ -158,4 +185,8 @@ class UdemyProjectUpdate extends React.Component {
     }
 }
 
-export default withStyles(TextFieldstyles)(UdemyProjectUpdate);
+export default withStyles(TextFieldstyles)(connect(
+    (state) => ({
+        user: state.youtube.get('user').get('user'),        
+    }),
+)(UdemyProjectUpdate));
