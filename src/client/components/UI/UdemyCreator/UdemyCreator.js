@@ -17,16 +17,17 @@ class UdemyCreator extends React.Component {
         Router.pushRoute('udemy_creator_project', {id: 'add'});
     }
 
-    handleShowProject = () => {
-        console.log('handleShowProject');
+    handleShowProject = (id) => {
+        console.log('handleShowProject : ' + id);
+        Router.pushRoute('udemy_creator_project', {id: id});
     }
 
     render() {
-        const { project } = this.props;
+        const { project, user } = this.props;
         return(
             <React.Fragment>
-            {project === '' && <UdemyProjectList onAdd={this.handleAddProject} onShow={this.handleShowProject} />}
-            {project !== '' && <UdemyProjectForm id={project} />}
+                {project === '' && <UdemyProjectList user={user} onAdd={this.handleAddProject} onShow={this.handleShowProject} />}
+                {project !== '' && <UdemyProjectForm id={project} />}
             </React.Fragment>
         )
     }
@@ -34,7 +35,8 @@ class UdemyCreator extends React.Component {
 
 export default connect(
     (state) => ({
-        project: state.ui.get('ui').get('creator_project'),     
+        user: state.youtube.get('user').get('user'),
+        project: state.ui.get('ui').get('creator_project'),
     }),
 )(UdemyCreator);
   

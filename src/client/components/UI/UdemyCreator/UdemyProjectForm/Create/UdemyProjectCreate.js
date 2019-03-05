@@ -9,8 +9,11 @@ import { Drawer , Typography , Fab , Button , Divider , IconButton, MuiThemeProv
 import { withStyles } from "@material-ui/core/styles";
 
 import network from '@lib/network';
+import { Router } from '@common/routes';
 
 import { connect } from 'react-redux';
+
+import UISnackbars from '@components/Common/UISnackbars';
 
 const TextFieldstyles = theme => ({
     cssOutlinedInput: {
@@ -76,6 +79,19 @@ class UdemyProjectCreate extends React.Component {
            
         const recv = await network('udemy', 'createProject', params);
         console.log(recv);
+
+        if(recv.result === "ok") {
+            UISnackbars({type: 'success', message: "프로젝트를 생성하였습니다."});
+            this.setState({
+                title: '',
+                desc: '',
+                price: 0,
+                check: false,
+            });
+            Router.pushRoute('udemy_creator');
+        } else {
+            UISnackbars({type: 'success', message: "프로젝트 생성에 실패하였습니다."});
+        }
     }
 
     render() {

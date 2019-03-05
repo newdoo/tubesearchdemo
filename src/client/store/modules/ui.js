@@ -6,6 +6,10 @@ import { pender } from 'redux-pender';
 // action types
 const MENU_DATA = 'ui/MENU_DATA';
 const CREATOR_PROJECT_DATA = 'ui/CREATOR_PROJECT_DATA';
+const MY_PROJECT_DATA = 'ui/MY_PROJECT_DATA';
+
+
+
 
 
 const MOBILE_DATA = 'ui/MOBILE_DATA';
@@ -22,6 +26,8 @@ const LOGIN_EMAIL = 'ui/LOGIN_EMAIL';
 // action creators
 export const setMenu = createAction(MENU_DATA);
 export const setCreatorProject = createAction(CREATOR_PROJECT_DATA);
+export const setMyProject = createAction(MY_PROJECT_DATA);
+
 
 
 export const setMobileMenu = createAction(MOBILE_DATA);
@@ -41,6 +47,8 @@ const initialState = Map({
   ui: Map ({
     menu: 0,
     creator_project: '',
+
+    project_list: [],
 
 
     width: 0, 
@@ -66,6 +74,9 @@ export default handleActions({
   },
   [CREATOR_PROJECT_DATA]: (state, action) => {
     return state.setIn(['ui','creator_project'], action.payload.project );
+  },
+  [MY_PROJECT_DATA]: (state, action) => {
+    return state.setIn(['ui','project_list'], action.payload.list );
   },
 
 

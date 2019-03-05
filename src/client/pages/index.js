@@ -50,9 +50,11 @@ class Index extends React.Component {
     switch(pathArray[0]) {
       case '/':       
         UiActions.setMenu({menu: 0});
+        UiActions.setCreatorProject({project:''});
         break;
       case '/udemycreator':
         UiActions.setMenu({menu: 4});
+        UiActions.setCreatorProject({project:''});
         break;
      
       default:
@@ -71,6 +73,7 @@ class Index extends React.Component {
 
   onAuthStateChanged = async() => {
     const user = await new Promise((resolve) => auth().onAuthStateChanged((user => user === null ? resolve(null):resolve(user))));
+    console.log(user);
     const { YoutubeActions } = this.props;
     YoutubeActions.setUserData({data: user});
 

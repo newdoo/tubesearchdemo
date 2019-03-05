@@ -24,5 +24,15 @@ const createProject = async(msg) => {
   return {result: 'ok'}; 
 }
 
-const handler = { createProject }
+const projectList = async(msg) => {
+  console.log('projectList');
+  console.log(msg.uid);
+
+  const theme = await db.udemySchema.findOne({uid: msg.uid});
+
+  if(theme === null) return {result: 'no'};
+
+  return {result: 'ok', project: theme.project}; 
+}
+const handler = { createProject, projectList }
 module.exports = recv => handler[recv.type](recv.data)

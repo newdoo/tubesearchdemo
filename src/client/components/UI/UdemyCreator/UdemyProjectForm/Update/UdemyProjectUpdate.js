@@ -42,8 +42,16 @@ class UdemyProjectUpdate extends React.Component {
     }
 
     componentDidMount() {
-        // TODO : 나의 프로젝트 데이터 호출
-        const { id } = this.props;
+        console.log('componentDidMount');
+        // 나의 프로젝트 데이터 호출
+        const { project } = this.props;
+        console.log(project);
+        this.setState({
+            title: project.title,
+            desc: project.desc,
+            price: project.price,
+            check: project.open
+        });
     }
 
     handleChange = name => event => {  
@@ -63,7 +71,7 @@ class UdemyProjectUpdate extends React.Component {
     }
 
     render() {
-        const { id, classes } = this.props;
+        const { classes, project } = this.props;
         const { title, desc, price, check } = this.state;
         return(
             <div className={cx('UdemyProjectForm')}>

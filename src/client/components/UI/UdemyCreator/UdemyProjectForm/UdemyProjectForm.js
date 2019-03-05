@@ -7,21 +7,27 @@ const cx = classNames.bind(styles);
 import UdemyProjectCreate from './Create';
 import UdemyProjectUpdate from './Update';
 
+import { connect } from 'react-redux';
+
 class UdemyProjectForm extends React.Component {
 
     componentDidMount() {
-        // TODO : 나의 프로젝트 데이터 호출
-        const { id } = this.props;
+
     }
 
     render() {
-        const { id } = this.props;
+        const { id, project_list } = this.props;
+        const project = project_list.find( o => o._id === id );
         return(
             <React.Fragment>
-                {id === 'add' ? <UdemyProjectCreate />:<UdemyProjectUpdate />}
+                {id === 'add' ? <UdemyProjectCreate />:<UdemyProjectUpdate project={project} />}
             </React.Fragment>
         )
     }
 }
 
-export default UdemyProjectForm;
+export default connect(
+    (state) => ({
+        project_list: state.ui.get('ui').get('project_list'),   
+    }),
+)(UdemyProjectForm);

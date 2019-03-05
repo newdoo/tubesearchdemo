@@ -21,7 +21,7 @@ const initialState = Map({
     channel: {},
     additionalUserInfo: {},
     credential: {},
-    user: {},
+    user: null,
   }),
 });
 
