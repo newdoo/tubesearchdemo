@@ -25,10 +25,12 @@ class MainContainer extends React.Component {
             Router.pushRoute('home');
             break;
             case 1:
+            Router.pushRoute('search');
             break;
             case 2:
             break;
             case 3:
+            Router.pushRoute('subscriptions');
             break;
             case 4:
             Router.pushRoute('udemy_creator');

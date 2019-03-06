@@ -51,11 +51,19 @@ class Index extends React.Component {
       case '/':       
         UiActions.setMenu({menu: 0});
         UiActions.setCreatorProject({project:''});
-        break;
+      break;
+      case '/search':
+        UiActions.setMenu({menu: 1});
+        UiActions.setCreatorProject({project:''});
+      break;
+      case '/subscriptions':
+        UiActions.setMenu({menu: 3});
+        UiActions.setCreatorProject({project:''});
+      break;
       case '/udemycreator':
         UiActions.setMenu({menu: 4});
         UiActions.setCreatorProject({project:''});
-        break;
+      break;
      
       default:
       {

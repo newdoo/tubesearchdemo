@@ -1,0 +1,57 @@
+@import 'utils';
+
+.UdemyProjectVideo {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    margin: 32px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 24px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+
+    .column {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .videoID {
+        width: 60%;
+    }
+
+    .verify {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        margin-left: auto;
+        height: 55px;
+
+        font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.3px;
+        text-align: center;
+        color: #0b0f18; 
+        text-transform: none;   
+        border-radius: 8px;
+
+        &:hover {
+            background-color: #039be5;
+        }
+    }
+
+    .verifyIcon {
+        color: green;
+        font-size: 48px;
+        margin-right: 32px;
+    }
+
+    .verifyNotIcon {
+        color: red;
+        font-size: 48px;
+        margin-right: 32px;
+    }
+}

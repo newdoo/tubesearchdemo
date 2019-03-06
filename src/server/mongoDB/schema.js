@@ -6,6 +6,11 @@ const accountSchema = new mongoose.Schema({
   user: JSON,
 });
 
+const contentSchema = {
+  videoID: {type: String, default: ""},
+  verify: {type: Boolean, default: false},
+};
+
 const projectSchema = {
   title: {type: String, default: ""},
   desc: {type: String, default: ""},
@@ -13,6 +18,8 @@ const projectSchema = {
   open: {type: Boolean, default: false},
   createDate: {type: Number, default: Date.now},
   updateDate: {type: Number, default: Date.now},
+
+  content: contentSchema,
 };
 
 const udemySchema = new mongoose.Schema({

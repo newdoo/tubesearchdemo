@@ -1,4 +1,7 @@
 const db = require('../../mongoDB/schema')
+const Youtube = require("youtube-api")
+const config = require('../../../common/config')
+const api = require('../../utils/youtubeAPI')
 
 const createProject = async(msg) => {
   console.log('createProject');
@@ -63,5 +66,37 @@ const projectList = async(msg) => {
   return {result: 'ok', project: theme.project}; 
 }
 
-const handler = { createProject, updateProject, projectList }
+const videoVerify = async(msg) => {
+  console.log('videoVerify');
+  console.log(msg.uid);
+  console.log(msg.videoID);
+
+  // TODO : 유튜브 인증
+  const account = await db.accountSchema.findOne({uid: msg.uid});
+  console.log(account.user.credential.accessToken);
+
+  const oauth = Youtube.authenticate({
+    type: "oauth",
+    token: account.user.credential.accessToken
+  });
+
+  console.log(oauth);
+
+  try {
+    const response = await api.VideoList({
+      auth: oauth,
+      part: 'id, snippet, contentDetails, fileDetails, liveStreamingDetails, player, processingDetails, recordingDetails, statistics, status, suggestions, topicDetails',
+      id: msg.videoID,
+    });
+    console.log(response);
+  } catch(e) {
+    console.log(e);
+  }
+  
+  console.log('c');
+
+  return {result: 'ok'};
+}
+
+const handler = { createProject, updateProject, projectList, videoVerify }
 module.exports = recv => handler[recv.type](recv.data)

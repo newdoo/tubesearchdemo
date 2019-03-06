@@ -51,23 +51,25 @@ app
       return req.params.msg === undefined ? app.render(req, res, '/') : api(req, res);
     });
 
-    server.get('/oauth2callback', (req, res) => {
-      console.log('/oauth2callback callback');
-      console.log(req.query.code);
+    // server.get('/oauth2callback', (req, res) => {
+    //   console.log('/oauth2callback callback');
+    //   console.log(req.query.code);
 
-      const oauth = Youtube.authenticate({
-        type: "oauth", 
-        client_id: config.youtubeClientID,
-        client_secret: config.youtubeClientSecert, 
-        redirect_url: config.youtubeRedirectUrl
-      });
+    //   const oauth = Youtube.authenticate({
+    //     type: "oauth", 
+    //     client_id: config.youtubeClientID,
 
-      oauth.getToken(req.query.code, (err, tokens) => {
-        console.log(tokens);
-      });
+    
+    //     client_secret: config.youtubeClientSecert, 
+    //     redirect_url: config.youtubeRedirectUrl
+    //   });
 
-      return app.render(req, res, '/');
-    });
+    //   oauth.getToken(req.query.code, (err, tokens) => {
+    //     console.log(tokens);
+    //   });
+
+    //   return app.render(req, res, '/');
+    // });
 
     // Default catch-all handler to allow Next.js to handle all other routes
     server.all('*', (req, res) => handler(req, res))
