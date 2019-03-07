@@ -15,6 +15,8 @@ import network from '@lib/network';
 import VerifyIcon from '@material-ui/icons/VerifiedUser';
 import VerifyNotIcon from '@material-ui/icons/Error';
 
+import Video from '@components/Common/Video';
+
 const TextFieldstyles = theme => ({
     cssOutlinedInput: {
         height: '55px',
@@ -96,6 +98,32 @@ class UdemyProjectVideo extends React.Component {
                         인증
                     </Button>
                 </div>
+                <Video url="https://youtu.be/OA8swCQMexQ1" allowFullScreen />
+
+                
+                {/* <iframe 
+                    width="544" 
+                    height="306" 
+                    src="https://www.youtube.com/embed/jyuHo4K5Vjs" 
+                    frameBorder="0"
+                    allow="autoplay=1; encrypted-media"
+                    allowFullScreen
+                >
+                </iframe>
+                <embed 
+                    width="544" 
+                    height="306" 
+                    src="https://www.youtube.com/v/jyuHo4K5Vjs" 
+                    frameBorder="0" 
+                    allowFullScreen
+                >
+                </embed>
+                <iframe src='https://www.youtube.com/embed/E7wJTI-1dvQ'
+                    frameBorder='0'
+                    allow='autoplay=1; encrypted-media'
+                    allowFullScreen
+                    title='video'
+                /> */}
                 
             </div>
         )

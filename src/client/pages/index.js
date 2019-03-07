@@ -88,6 +88,30 @@ class Index extends React.Component {
     if(user === null )
       return;
 
+    // console.log('a');
+
+    // // Build Firebase credential with the Google ID token.
+    // const credential = firebase.auth.GoogleAuthProvider.credential("eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmMDIyYTQ5ZTk3ODYxNDhhZDBlMzc5Y2M4NTQ4NDRlMzZjM2VkYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTkyNzQ5OTMyMDg4LWk1M2NpdWZwMWZndWI1MzJybHU2amxlZHB0cGoyMnVqLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTkyNzQ5OTMyMDg4LWk1M2NpdWZwMWZndWI1MzJybHU2amxlZHB0cGoyMnVqLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAxMjA3NDk5NTg2Njk2NjQzMzMzIiwiZW1haWwiOiJudW1peG1vdmllQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiVzVfSlY1NVhiempkQTZBcnRUUGk0QSIsImlhdCI6MTU1MTg0NjA3NSwiZXhwIjoxNTUxODQ5Njc1fQ.C-Rrd1eQDCky4cWoxxUBa7DkZA2pnGpfTerkxNPQSPCGmwkglU8_7rrRAnVWRF4kiZQvttcUdO4n9GkEXYoPcH43ceVds56-_rQSfUNlZeJOIyEqcyEkRnPtUx8x9pbwTkgNQ7-_rfismrBfHo-1mjSHJ6Xiz4-nO_g_A480NbvWsFxQOn9owK6IyuKc46e_qz_7eHGd7JYILdEYoe0vh9CpUccqJwZRYCyaEYh3ETGTegUdFc4OBIbwUFsOoyZwBEhFcZQm38fMTyhi64T0FundaFZWhy3lW71XhWXqGVi7HnIAG_FYCcOntB9jNaRVyBSf9KUGpmmTRBPfY7Lgkw",
+    // "ya29.GmPEBlEA5TnOkEMm4SfaVzABoMyIobdvdvNTePKleT7ev4KkBiP86u1O5AbwCwS32gfrt8SZOKxNPskIc2W0LGDS1xSvIVLSlLM24z_vChf4yTS3yKSQGWuT6kcHQOHqIXE5LRY");
+
+    // console.log('aa');
+
+    // firebase.auth().signInAndRetrieveDataWithCredential(credential)
+    //   .then(function(userCredential) {
+    //     console.log(userCredential.credential);
+    //   }).catch(function (err) {
+    //     console.log(err.code); // Error 출력
+    //       auth().signOut().then(function() {
+    //         // Sign-out successful.
+    //         console.log('로그아웃 성공');
+    //         window.location.reload();
+    //     }).catch(function(error) {
+    //         // An error happened.
+    //         console.log('로그아웃 에러');
+    //     });
+    //   });
+
+
     // console.log(user);
     // // console.log(user.toJSON());
     // // console.log(user.getIdToken());

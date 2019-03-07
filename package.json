@@ -67,6 +67,7 @@
     "url-loader": "^1.1.1",
     "urlencode": "^1.1.0",
     "uuid": "^3.3.2",
+    "voca": "^1.4.0",
     "web3": "^1.0.0-beta.34",
     "youtube-api": "^2.0.10"
   },
