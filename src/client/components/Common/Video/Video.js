@@ -6,13 +6,28 @@ import voca from 'voca';
 
 class Video extends React.Component {
 
+    state = {
+        id: '',
+    }
+
     // Video 정체성 찾기
     getVideoSite = () => {
         const { url } = this.props;
 
+        const urlData = voca.trim(url);
+
+        // http로 시작하는지 확인
+        const isHttp = voca.startsWith(urlData, 'http', 0);
+        if(!isHttp)
+            return;
+
         // https://youtu.be/ 형태의 사이트 추출
-        const aa = voca.startsWith(url, 'http', 0);
-        console.log(aa);
+        const firstIndex = voca.indexOf(urlData, "https://youtu.be/");
+        const endIndex = voca.indexOf(urlData, "?");
+
+        
+        console.log(firstIndex);
+        console.log(endIndex);
 
     }
 
