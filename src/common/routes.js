@@ -8,3 +8,5 @@ routes
 
 .add('udemy_creator','/udemycreator','index')
 .add('udemy_creator_project','/udemycreator/:id','index')
+
+.add('selenium', '/selenium', 'index')

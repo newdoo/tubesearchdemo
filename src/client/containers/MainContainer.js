@@ -14,6 +14,7 @@ import SearchByChannelName from '@components/UI/SearchByChannelName';
 import Subscriptions from '@components/UI/Subscriptions';
 import UdemyCreator from '@components/UI/UdemyCreator';
 import UdemyUser from '@components/UI/UdemyUser';
+import Selenium from '@components/UI/Selenium';
 
 class MainContainer extends React.Component {
 
@@ -37,6 +38,9 @@ class MainContainer extends React.Component {
             break;
             case 5:
             break;
+            case 6:
+            Router.pushRoute('selenium');
+            break;
 
             default:
             break;
@@ -57,14 +61,16 @@ class MainContainer extends React.Component {
                         <Tab label="Subscriptions" />
                         <Tab label="UdemyCreator" />
                         <Tab label="UdemyUser" />
+                        <Tab label="Selenium" />
                     </Tabs>
                 </AppBar>   
-                {menu === 0 &&  <div>Home</div>}   
-                {menu === 1 &&  <SearchByChannelID />}   
-                {menu === 2 &&  <SearchByChannelName />}
-                {menu === 3 &&  <Subscriptions />}
-                {menu === 4 &&  <UdemyCreator />}
-                {menu === 5 &&  <UdemyUser />}
+                {menu === 0 && <div>Home</div>}   
+                {menu === 1 && <SearchByChannelID />}   
+                {menu === 2 && <SearchByChannelName />}
+                {menu === 3 && <Subscriptions />}
+                {menu === 4 && <UdemyCreator />}
+                {menu === 5 && <UdemyUser />}
+                {menu === 6 && <Selenium />}
             </div>
         );
     }

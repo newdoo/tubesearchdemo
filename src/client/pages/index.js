@@ -64,6 +64,10 @@ class Index extends React.Component {
         UiActions.setMenu({menu: 4});
         UiActions.setCreatorProject({project:''});
       break;
+      case '/selenium':
+        UiActions.setMenu({menu: 6});
+        UiActions.setCreatorProject({project:''});
+      break;
      
       default:
       {
