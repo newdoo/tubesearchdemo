@@ -59,8 +59,10 @@ class UdemyProjectVideo extends React.Component {
         const { user } = this.props;
         const recv = await network('udemy','videoVerify',{uid: user.uid, videoID: this.state.id});
         console.log(recv);
+    }
 
-        
+    showVideo = () => {
+        console.log('showVideo');
     }
 
     render() {
@@ -92,39 +94,17 @@ class UdemyProjectVideo extends React.Component {
                         }}
                     />
                     <Button 
-                        onClick={this.videoVerify} 
+                        onClick={this.showVideo} 
                         variant="outlined" 
                         className={cx('verify')}>
                         인증
                     </Button>
                 </div>
-                <Video url="https://youtu.be/OA8swCQMexQ1" allowFullScreen />
-
-                
-                {/* <iframe 
-                    width="544" 
-                    height="306" 
-                    src="https://www.youtube.com/embed/jyuHo4K5Vjs" 
-                    frameBorder="0"
-                    allow="autoplay=1; encrypted-media"
-                    allowFullScreen
-                >
-                </iframe>
-                <embed 
-                    width="544" 
-                    height="306" 
-                    src="https://www.youtube.com/v/jyuHo4K5Vjs" 
-                    frameBorder="0" 
-                    allowFullScreen
-                >
-                </embed>
-                <iframe src='https://www.youtube.com/embed/E7wJTI-1dvQ'
-                    frameBorder='0'
-                    allow='autoplay=1; encrypted-media'
-                    allowFullScreen
-                    title='video'
-                /> */}
-                
+                { /* <Video url="https://youtu.be/xh2iEIJUVfk?autoplay=1" allowFullScreen /> */ }
+                { /* <Video url="https://www.youtube.com/watch?v=xh2iEIJUVfk&autoplay=1" allowFullScreen /> */ }
+                { /* <Video url="https://www.youtube.com/embed/xh2iEIJUVfk?autoplay=1" allowFullScreen /> */ }
+                { /* https://player.vimeo.com/video/76979871?autoplay=1 */ }
+                <Video url={id} allowFullScreen />
             </div>
         )
     }

@@ -1,33 +1,105 @@
 import React from 'react';
 
 import Youtube from './Youtube';
+import Vimeo from './Vimeo';
 
 import voca from 'voca';
+import { format } from 'path';
 
 class Video extends React.Component {
 
     state = {
+        platform: 'default',
         id: '',
+        query: '',
+    }
+
+    componentDidMount() {
+        this.setVideoSite(this.props);
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log('componentWillReceiveProps');
+        this.setVideoSite(nextProps);
     }
 
     // Video 정체성 찾기
-    getVideoSite = () => {
-        const { url } = this.props;
+    setVideoSite = (props) => {
+        console.log('setVideoSite');
+        const { url } = props;
 
-        const urlData = voca.trim(url);
+        let urlTemp = voca.trim(url);
 
         // http로 시작하는지 확인
-        const isHttp = voca.startsWith(urlData, 'http', 0);
+        const isHttp = voca.startsWith(urlTemp, 'http', 0);
         if(!isHttp)
             return;
 
-        // https://youtu.be/ 형태의 사이트 추출
-        const firstIndex = voca.indexOf(urlData, "https://youtu.be/");
-        const endIndex = voca.indexOf(urlData, "?");
+        // http => https 변환
+        urlTemp = voca.replace(urlTemp, 'http://', 'https://');
+        console.log(urlTemp);
 
-        
-        console.log(firstIndex);
-        console.log(endIndex);
+        // https://youtube.com => https://www.youtube.com 변환
+        urlTemp = voca.replace(urlTemp, 'https://youtube.com', 'https://www.youtube.com');
+        console.log(urlTemp);
+
+        // https://vimeo.com => https://www.vimeo.com 변환
+        urlTemp = voca.replace(urlTemp, 'https://vimeo.com', 'https://www.vimeo.com');
+        console.log(urlTemp);
+
+        if(voca.indexOf(urlTemp, "https://youtu.be/") === 0) { // https://youtu.be/ 형태의 사이트 추출
+            // https://youtu.be/id?query
+            const exceptHttp = voca.splice(urlTemp, 0, 17);
+            const splitData = voca.split(exceptHttp, /\?/, 2);
+            console.log(splitData);
+            this.setState({platform: 'youtube', id: splitData[0], query: '?' + splitData[1]});
+        }
+        if(voca.indexOf(urlTemp, "https://www.youtube.com/watch?") === 0) { // https://www.youtube.com/watch? 형태의 사이트 추출
+            // https://www.youtube.com/watch?query v=id
+            const exceptHttp = voca.splice(urlTemp, 0, 30);
+            console.log(exceptHttp);
+            const splitData = voca.split(exceptHttp, '&');
+            console.log(splitData);
+            let qq = '?';
+            for(var i=0;i<splitData.length;++i) {
+                if( voca.matches(splitData[i], /v=*/) ) {
+                    const id = voca.splice(splitData[i], 0, 2);
+                    this.setState({platform: 'youtube', id: id});
+                } else {
+                    qq += splitData[i] + '&';
+                }
+            }
+            this.setState({query: qq});
+        }
+        if(voca.indexOf(urlTemp, "https://www.youtube.com/embed/") === 0) { // https://www.youtube.com/embed/ 형태의 사이트 추출
+            // https://www.youtube.com/embed/id?query
+            const exceptHttp = voca.splice(urlTemp, 0, 30);
+            const splitData = voca.split(exceptHttp, /\?/, 2);
+            console.log(splitData);
+            this.setState({platform: 'youtube', id: splitData[0], query: '?' + splitData[1]});
+        }
+        if(voca.indexOf(urlTemp, "https://www.vimeo.com/") === 0) { // https://www.vimeo.com/ 형태의 사이트 추출
+            // https://www.vimeo.com/id?query
+            const exceptHttp = voca.splice(urlTemp, 0, 22);
+            const splitData = voca.split(exceptHttp, /\?/, 2);
+            console.log(splitData);
+            this.setState({platform: 'vimeo', id: splitData[0], query: '?' + splitData[1]});
+        }
+        if(voca.indexOf(urlTemp, "https://www.vimeo.com/channels/staffpicks/") === 0) { // https://www.vimeo.com/channels/staffpicks/ 형태의 사이트 추출
+            // https://www.vimeo.com/channels/staffpicks/id?query
+            const exceptHttp = voca.splice(urlTemp, 0, 42);
+            const splitData = voca.split(exceptHttp, /\?/, 2);
+            console.log(splitData);
+            this.setState({platform: 'vimeo', id: splitData[0], query: '?' + splitData[1]});
+        }
+        if(voca.indexOf(urlTemp, "https://player.vimeo.com/video/") === 0) { // https://player.vimeo.com/video/ 형태의 사이트 추출
+            // https://player.vimeo.com/video/id?query
+            const exceptHttp = voca.splice(urlTemp, 0, 31);
+            const splitData = voca.split(exceptHttp, /\?/, 2);
+            console.log(splitData);
+            this.setState({platform: 'vimeo', id: splitData[0], query: '?' + splitData[1]});
+        }
+
 
     }
 
@@ -83,14 +155,16 @@ class Video extends React.Component {
     }
 
     render() {
-        this.getVideoSite();
-        const { url, allowFullScreen } = this.props;
-        const query = this.makeQuery();
-        console.log(query);
+        const { allowFullScreen } = this.props;
+        const { platform, id, query } = this.state;
+        console.log('id : ' + id);
+        console.log('query : ' + query);
 
         return(
             <React.Fragment>
-                <Youtube id={url} allowFullScreen={allowFullScreen} query={query} />
+                { platform === 'youtube' && <Youtube id={id} query={query} allowFullScreen={allowFullScreen} /> }
+                { platform === 'vimeo' && <Vimeo id={id} query={query} allowFullScreen={allowFullScreen} /> }
+                { platform === 'default' && <div>동영상 플랫폼을 식별할 수 없습니다. 관리자에게 문의하세요.</div>}
             </React.Fragment>
         );
     }
